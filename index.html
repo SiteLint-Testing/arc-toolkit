@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Toolkit Test Page Suite</title>
+    <script>
+        (function(w,d,s,a,m,t) {
+            a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.fetchpriority='high';a.id = 'auditor_app';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=87904027da48e0957d1ee79951f842a161f244a96750b3120be9371c56528682';
+
+            function onPageLoaded() {
+                w.clearTimeout(t);
+                w.removeEventListener('DOMContentLoaded', onPageLoaded);
+                m.parentNode.insertBefore(a, m);
+            }
+            
+            function onAuditorLoaded(){
+                auditor.config({
+                    includeHidden: true,
+                    stripTextFromReport: false,
+                    watchDomChanges: false
+                }).run();
+            }
+
+            a.addEventListener('load', onAuditorLoaded);
+
+            if (d.readyState !== 'loading') {
+                onPageLoaded();
+                return;
+            }
+
+            w.addEventListener('DOMContentLoaded', onPageLoaded);
+        })(window, document, 'script');
+    </script>
+</head>
+<body>
+
+    <p>Navigate to an ARC toolkit violation example:
+    <select onchange="navigateToPage(this)">
+            <option value="index.html">Choose an ARC Toolkit test page</option>
+            <option value="https://docs.google.com/spreadsheets/d/1l4ouw7RUwUbkEBrnBWXk2r_2zxVoT3k8hSiNhhlZCoM/edit?gid=1250321226#gid=1250321226">Spreadsheet for ARC</option>
+            <option value="https://act-rules.github.io/rules/">Rules for ARC Toolkit</option>
+            <option value="https://sitelint-testing.github.io/axe-dev-tools/">Go to axe Dev Tools</option>
+            <option value="https://sitelint-testing.github.io/every-rule/">Go to SiteLint</option>
+        <option value="aria-required-context-role.html">1. Aria required context role</option>
+        <option value="aria-attribute-is-defined-in-wai-aria.html">2. Aria attribute is defined in WAI ARIA</option>
+        <option value="aria-required-owned-elements.html">3. Aria required owned elements</option>
+        <option value="aria-state-or-property-has-valid-value.html">4. Aria state or property has valid value</option>
+        <option value="aria-state-or-property-is-permitted.html">5. Aria state or property is permitted</option>
+        <option value="attribute-is-not-duplicated.html">6. Attribute is not duplicated</option>
+        <option value="audio-and-visuals-of-video-element-have-transcript.html">7. Audio and visuals of video element have transcript</option>
+        <option value="audio-element-content-has-text-alternative.html">8. Audio element content has text alternative</option>
+        <option value="audio-element-content-has-transcript.html">9. Audio element content has transcript</option>
+        <option value="audio-element-content-is-media-alternative-for-text.html">10. Audio element content is media alternative for text</option>
+        <option value="audio-or-video-element-avoids-automatically-playing-audio.html">11. Audio or video element avoids automatically playing audio</option>
+        <option value="audio-or-video-element-that-plays-automatically-has-a-control-mechanism.html">12. Audio or video element that plays automatically has a control mechanism</option>
+        <option value="audio-or-video-element-that-plays-automatically-has-no-audio-that-lasts-more-than-3-seconds.html">13. Audio or video element that plays automatically has no audio that lasts more than 3 seconds</option>
+        <option value="autocomplete-attribute-has-valid-value.html">14. Autocomplete attribute has valid value</option>
+        <option value="block-of-repeated-content-is-collapsible.html">15. Block of repeated content is collapsible</option>
+        <option value="button-has-accessible-name.html">16. Button has accessible name</option>
+        <option value="bypass-blocks-of-repeated-content.html">17. Bypass blocks of repeated content</option>
+        <option value="content-has-alternative-for-visual-reference.html">18. Content has alternative for visual reference</option>
+        <option value="device-motion-based-changes-to-the-content-can-also-be-created-from-the-user-interface.html">19. Device motion-based changes to the content can also be created from the user interface</option>
+        <option value="device-motion-based-changes-to-the-content-can-be-disabled.html">20. Device motion-based changes to the content can be disabled</option>
+        <option value="document-has-a-landmark-with-non-repeated-content.html">21. Document has a landmark with non-repeated content</option>
+        <option value="document-has-an-instrument-to-move-focus-to-non-repeated-content.html">22. Document has an instrument to move focus to non-repeated content</option>
+        <option value="document-has-heading-for-non-repeated-content.html">23. Document has heading for non-repeated content</option>
+        <option value="element-in-sequential-focus-order-has-visible-focus.html">24. Element in sequential focus order has visible focus</option>
+        <option value="element-marked-as-decorative-is-not-exposed.html">25. Element marked as decorative is not exposed</option>
+        <option value="element-with-aria-hidden-has-no-content-in-sequential-focus-navigation.html">26. Element with aria-hidden has no content in sequential focus navigation</option>
+        <option value="element-with-lang-attribute-has-valid-language-tag.html">27. Element with lang attribute has valid language tag</option>
+        <option value="element-with-presentational-children-has-no-focusable-content.html">28. Element with presentational children has no focusable content</option>
+        <option value="element-with-role-attribute-has-required-states-and-properties.html">29. Element with role attribute has required states and properties</option>
+        <option value="error-message-describes-invalid-form-field-value.html">30. Error message describes invalid form field value</option>
+        <option value="focusable-element-has-no-keyboard-trap-via-non-standard-navigation.html">31. Focusable element has no keyboard trap via non-standard navigation</option>
+        <option value="focusable-element-has-no-keyboard-trap-via-standard-navigation.html">32. Focusable element has no keyboard trap via standard navigation</option>
+        <option value="focusable-element-has-no-keyboard-trap.html">33. Focusable element has no keyboard trap</option>
+        <option value="form-field-has-accessible-name.html">34. Form field has accessible name</option>
+        <option value="form-field-label-is-descriptive.html">35. Form field label is descriptive</option>
+        <option value="headers-attribute-specified-on-a-cell-refers-to-cells-in-the-same-table-element.html">36. Headers attribute specified on a cell refers to cells in the same table element</option>
+        <option value="heading-has-accessible-name.html">37. Heading has accessible name</option>
+        <option value="heading-is-descriptive.html">38. Heading is descriptive</option>
+        <option value="html-element-language-subtag-matches-language.html">39. HTML element language subtag matches language</option>
+        <option value="html-graphics-contain-no-text.html">40. HTML graphics contain no text</option>
+        <option value="html-page-has-lang-attribute.html">41. HTML page has lang attribute</option>
+        <option value="html-page-has-title.html">42. HTML page has title</option>
+        <option value="html-page-lang-and-xml-lang-attributes-have-matching-values.html">43. HTML page lang and xml:lang attributes have matching values</option>
+        <option value="html-page-lang-attribute-has-valid-language-tag.html">44. HTML page lang attribute has valid language tag</option>
+        <option value="html-page-language-subtag-matches-default-language.html">45. HTML page language subtag matches default language</option>
+        <option value="html-page-title-is-descriptive.html">46. HTML page title is descriptive</option>
+        <option value="id-attribute-value-is-unique.html">47. ID attribute value is unique</option>
+        <option value="iframe-element-has-accessible-name.html">48. Iframe element has accessible name</option>
+        <option value="iframe-elements-with-identical-accessible-names-have-equivalent-purpose.html">49. Iframe elements with identical accessible names have equivalent purpose</option>
+        <option value="iframe-with-negative-tabindex-has-no-interactive-elements.html">50. Iframe with negative tabindex has no interactive elements</option>
+        <option value="image-accessible-name-is-descriptive.html">51. Image accessible name is descriptive</option>
+        <option value="image-button-has-accessible-name.html">52. Image button has accessible name</option>
+        <option value="image-has-accessible-name.html">53. Image has accessible name</option>
+        <option value="image-not-in-the-accessibility-tree-is-decorative.html">54. Image not in the accessibility tree is decorative</option>
+        <option value="keyboard-shortcuts-use-only-printable-characters.html">55. Keyboard shortcuts use only printable characters</option>
+        <option value="letter-spacing-in-style-attributes-is-not-important.html">56. Letter spacing in style attributes is not important</option>
+        <option value="line-height-in-style-attributes-is-not-important.html">57. Line height in style attributes is not important</option>
+        <option value="link-has-accessible-name.html">58. Link has accessible name</option>
+        <option value="link-in-context-is-descriptive.html">59. Link in context is descriptive</option>
+        <option value="link-is-descriptive.html">60. Link is descriptive</option>
+        <option value="links-with-identical-accessible-names-and-same-context-serve-equivalent-purpose.html">61. Links with identical accessible names and same context serve equivalent purpose</option>
+        <option value="links-with-identical-accessible-names-have-equivalent-purpose.html">62. Links with identical accessible names have equivalent purpose</option>
+        <option value="menuitem-has-accessible-name.html">63. Menuitem has accessible name</option>
+        <option value="meta-element-has-no-refresh-delay-no-exception.html">64. Meta element has no refresh delay no exception</option>
+        <option value="meta-element-has-no-refresh-delay.html">65. Meta element has no refresh delay</option>
+        <option value="meta-viewport-allows-for-zoom.html">66. Meta viewport allows for zoom</option>
+        <option value="object-element-rendering-non-text-content-has-accessible-name.html">67. Object element rendering non-text content has accessible name</option>
+        <option value="orientation-of-the-page-is-not-restricted-using-css-transform-property.html">68. Orientation of the page is not restricted using CSS transform property</option>
+        <option value="role-attribute-has-valid-value.html">69. Role attribute has valid value</option>
+        <option value="scrollable-element-is-keyboard-accessible.html">70. Scrollable element is keyboard accessible</option>
+        <option value="svg-element-with-explicit-role-has-accessible-name.html">71. SVG element with explicit role has accessible name</option>
+        <option value="table-header-cell-has-assigned-cells.html">72. Table header cell has assigned cells</option>
+        <option value="text-content-that-changes-automatically-can-be-paused-stopped-or-hidden.html">73. Text content that changes automatically can be paused, stopped, or hidden</option>
+        <option value="text-has-enhanced-contrast.html">74. Text has enhanced contrast</option>
+        <option value="text-has-minimum-contrast.html">75. Text has minimum contrast</option>
+        <option value="video-element-auditory-content-has-accessible-alternative.html">76. Video element auditory content has accessible alternative</option>
+        <option value="video-element-auditory-content-has-captions.html">77. Video element auditory content has captions</option>
+        <option value="video-element-content-is-media-alternative-for-text.html">78. Video element content is media alternative for text</option>
+        <option value="video-element-visual-content-has-accessible-alternative.html">79. Video element visual content has accessible alternative</option>
+        <option value="video-element-visual-content-has-audio-description.html">80. Video element visual content has audio description</option>
+        <option value="video-element-visual-content-has-strict-accessible-alternative.html">81. Video element visual content has strict accessible alternative</option>
+        <option value="video-element-visual-only-content-has-accessible-alternative.html">82. Video element visual-only content has accessible alternative</option>
+        <option value="video-element-visual-only-content-has-audio-track-alternative.html">83. Video element visual-only content has audio track alternative</option>
+        <option value="video-element-visual-only-content-has-transcript.html">84. Video element visual-only content has transcript</option>
+        <option value="video-element-visual-only-content-is-media-alternative-for-text.html">85. Video element visual-only content is media alternative for text</option>
+        <option value="visible-label-is-part-of-accessible-name.html">86. Visible label is part of accessible name</option>
+        <option value="word-spacing-in-style-attributes-is-not-important.html">87. Word spacing in style attributes is not important</option>
+        <option value="zoomed-text-node-is-not-clipped-with-css-overflow.html">88. Zoomed text node is not clipped with CSS overflow</option>
+        </select>
+    </p>
+    
+<script>
+    function navigateToPage(select) {
+        const selectedValue = select.value;
+        if (selectedValue) {
+            // List of specific external links to open in a new tab
+            const externalLinks = [
+                "https://docs.google.com/spreadsheets/d/1l4ouw7RUwUbkEBrnBWXk2r_2zxVoT3k8hSiNhhlZCoM/edit?gid=0#gid=0",
+                "https://act-rules.github.io/rules/",
+                "https://sitelint-testing.github.io/axe-dev-tools/",
+                "https://sitelint-testing.github.io/every-rule/"
+            ];
+            
+            if (externalLinks.includes(selectedValue)) {
+                window.open(selectedValue, '_blank'); // Open specific links in a new tab
+            } else {
+                window.location.href = selectedValue; // Navigate other links in the same window
+            }
+        }
+    }
+</script>
+
+    <header role="banner">
+        <h1>ARC Toolkit Test Page Suite</h1>
+    </header>
+
+    <nav role="navigation">
+    </nav>
+
+    <main id="main-content" role="main">
+        <section>
+        </section>
+    </main>
+
+    <footer id="footer" role="contentinfo">
+    </footer>
+
+</body>
+</html>

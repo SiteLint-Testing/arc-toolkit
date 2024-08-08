@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA attribute value is missing</title>
+    <script>
+    (function(w,d,s,a,m,t) {
+      a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.fetchpriority='high';a.id = 'auditor_app';a.dataset.cfasync = 'false';a.src = 'https://stage-auditor.sitelint.com/auditor.bundle.js?tokenId=87904027da48e0957d1ee79951f842a161f244a96750b3120be9371c56528682';
+
+      function onPageLoaded() {
+        w.clearTimeout(t);
+        w.removeEventListener('DOMContentLoaded', onPageLoaded);
+        m.parentNode.insertBefore(a, m);
+      }
+      
+      function onAuditorLoaded(){
+        auditor.config({
+          includeHidden: true,
+          stripTextFromReport: false,
+          watchDomChanges: false
+        }).run();
+      }
+
+      a.addEventListener('load', onAuditorLoaded);
+
+      if (d.readyState !== 'loading') {
+        onPageLoaded();
+        return;
+      }
+
+      w.addEventListener('DOMContentLoaded', onPageLoaded);
+    })(window, document, 'script');
+    </script>
+</head>
+<body>
+
+  <p>Navigate to an ARC toolkit violation example:
+    <select onchange="navigateToPage(this)">
+            <option value="index.html">Choose an ARC Toolkit test page</option>
+            <option value="https://docs.google.com/spreadsheets/d/1l4ouw7RUwUbkEBrnBWXk2r_2zxVoT3k8hSiNhhlZCoM/edit?gid=1250321226#gid=1250321226">Spreadsheet for ARC</option>
+            <option value="https://act-rules.github.io/rules/">Rules for ARC Toolkit</option>
+            <option value="https://sitelint-testing.github.io/axe-dev-tools/">Go to axe Dev Tools</option>
+            <option value="https://sitelint-testing.github.io/every-rule/">Go to SiteLint</option>
+            <option value="access-key-used.html">1. Access key used</option>
+            <option value="accessible-text-does-not-contain-visible-text.html">2. Accessible text does not contain visible text</option>
+            <option value="active-svg-missing-aria-label.html">3. Active svg missing aria label</option>
+            <option value="application-role-found-on-body.html">4. Application role found on body</option>
+            <option value="aria-attribute-is-not-allowed.html">5. Aria attribute is not allowed</option>
+            <option value="aria-attribute-value-is-missing.html">6. Aria attribute value is missing</option>
+            <option value="aria-attribute-value-is-using-the-default-value.html">7. Aria attribute value is using the default value</option>
+            <option value="aria-widget-has-an-incorrect-owned-element.html">8. Aria widget has an incorrect owned element</option>
+            <option value="aria-widget-missing-required-context-role.html">9. Aria widget missing required context role</option>
+            <option value="aria-hidden-used.html">10. Aria hidden used</option>
+            <option value="aria-hidden-used-on-focusable.html">11. Aria hidden used on focusable</option>
+            <option value="aria-hidden-used-on-parent-of-focusable.html">12. Aria hidden used on parent of focusable</option>
+            <option value="aria-label-on-incompatible-element.html">13. Aria label on incompatible element</option>
+            <option value="aria-level-on-heading.html">14. Aria level on heading</option>
+            <option value="autocomplete-missing.html">15. Autocomplete missing</option>
+            <option value="bad-aria-role.html">16. Bad aria role</option>
+            <option value="bold-used.html">17. Bold used</option>
+            <option value="check-if-link-text-needed.html">18. Check if link text needed</option>
+            <option value="content-behind-dialog-is-accessible.html">19. Content behind dialog is accessible</option>
+            <option value="duplicate-for-and-id.html">20. Duplicate for and id</option>
+            <option value="duplicate-headings.html">21. Duplicate headings</option>
+            <option value="duplicate-id-found.html">22. Duplicate id found</option>
+            <option value="duplicate-labels-used.html">23. Duplicate labels used</option>
+            <option value="duplicate-textual-alternative.html">24. Duplicate textual alternative</option>
+            <option value="empty-label-text.html">25. Empty label text</option>
+            <option value="empty-list.html">26. Empty list</option>
+            <option value="empty-list-item.html">27. Empty list item</option>
+            <option value="focusable-element-found-within-presentational-children.html">28. Focusable element found within presentational children</option>
+            <option value="h1-in-header.html">29. H1 in header</option>
+            <option value="heading-level-skipped.html">30. Heading level skipped</option>
+            <option value="iframe-no-title.html">31. Iframe no title</option>
+            <option value="image-with-presentation-role.html">32. Image with presentation role</option>
+            <option value="input-has-no-accessible-name.html">33. Input has no accessible name</option>
+            <option value="insufficient-large-text-contrast.html">34. Insufficient large text contrast</option>
+            <option value="insufficient-normal-text-contrast.html">35. Insufficient normal text contrast</option>
+            <option value="invalid-aria-describedby.html">36. Invalid aria-describedby</option>
+            <option value="invalid-doctype.html">37. Invalid doctype</option>
+            <option value="invalid-id-found.html">38. Invalid id found</option>
+            <option value="italic-used.html">39. Italic used</option>
+            <option value="label-does-not-have-a-for-attribute.html">40. Label does not have a for attribute</option>
+            <option value="label-for-has-no-matching-id.html">41. Label for has no matching id</option>
+            <option value="label-hidden-with-display.html">42. Label hidden with display</option>
+            <option value="lang-not-defined-on-html.html">43. Lang not defined on html</option>
+            <option value="line-break-used.html">44. Line break used</option>
+            <option value="link-has-a-title.html">45. Link has a title</option>
+            <option value="link-target-not-focusable.html">46. Link target not focusable</option>
+            <option value="link-text-contains-the-word-click.html">47. Link text contains the word click</option>
+            <option value="link-text-is-not-descriptive.html">48. Link text is not descriptive</option>
+            <option value="links-target-does-not-exist.html">49. Links target does not exist</option>
+            <option value="list-item-has-no-list-parent.html">50. List item has no list parent</option>
+            <option value="missing-bypass-methods.html">51. Missing bypass methods</option>
+            <option value="missing-href.html">52. Missing href</option>
+            <option value="missing-id.html">53. Missing id</option>
+            <option value="missing-link-alt-attribute.html">54. Missing link alt attribute</option>
+            <option value="missing-required-aria-attribute.html">55. Missing required aria attribute</option>
+            <option value="modal-has-no-accessible-name.html">56. Modal has no accessible name</option>
+            <option value="multiple-footer-landmarks.html">57. Multiple footer landmarks</option>
+            <option value="multiple-form-labels-used.html">58. Multiple form labels used</option>
+            <option value="multiple-h1.html">59. Multiple h1</option>
+            <option value="multiple-header-landmarks.html">60. Multiple header landmarks</option>
+            <option value="multiple-naming-techniques-used.html">61. Multiple naming techniques used</option>
+            <option value="no-legend.html">62. No legend</option>
+            <option value="no-alt-text.html">63. No alt text</option>
+            <option value="no-doctype.html">64. No doctype</option>
+            <option value="no-heading-text.html">65. No heading text</option>
+            <option value="no-headings-on-page.html">66. No headings on page</option>
+            <option value="no-image-role.html">67. No image role</option>
+            <option value="no-label-for-button-element.html">68. No label for button element</option>
+            <option value="no-link-text.html">69. No link text</option>
+            <option value="no-main-landmark.html">70. No main landmark</option>
+            <option value="no-nav-landmark.html">71. No nav landmark</option>
+            <option value="non-active-element-in-tab-order.html">72. Non active element in tab order</option>
+            <option value="non-list-item-child-of-list.html">73. Non list item child of list</option>
+            <option value="placeholder-used-for-label.html">74. Placeholder used for label</option>
+            <option value="problematic-alt-text.html">75. Problematic alt text</option>
+            <option value="scrollable-element-is-not-focusable.html">76. Scrollable element is not focusable</option>
+            <option value="special-characters-used.html">77. Special characters used</option>
+            <option value="strikethrough-used.html">78. Strikethrough used</option>
+            <option value="svg-missing-accessible-name.html">79. Svg missing accessible name</option>
+            <option value="title-on-non-interactive-element.html">80. Title on non interactive element</option>
+            <option value="unable-to-determine-text-contrast-against-image-background.html">81. Unable to determine text contrast against image background</option>
+            <option value="underline-used.html">82. Underline used</option>
+            <option value="unknown-table-purpose.html">83. Unknown table purpose</option>
+            <option value="visible-label-not-part-of-accessible-name.html">84. Visible label not part of accessible name</option>
+            <option value="zooming-disabled.html">85. Zooming disabled</option>        
+          </select>
+        </p>
+        
+    <script>
+        function navigateToPage(select) {
+            const selectedValue = select.value;
+            if (selectedValue) {
+                // List of specific external links to open in a new tab
+                const externalLinks = [
+                    "https://docs.google.com/spreadsheets/d/1l4ouw7RUwUbkEBrnBWXk2r_2zxVoT3k8hSiNhhlZCoM/edit?gid=0#gid=0",
+                    "https://act-rules.github.io/rules/",
+                    "https://sitelint-testing.github.io/axe-dev-tools/",
+                    "https://sitelint-testing.github.io/every-rule/"
+                ];
+                
+                if (externalLinks.includes(selectedValue)) {
+                    window.open(selectedValue, '_blank'); // Open specific links in a new tab
+                } else {
+                    window.location.href = selectedValue; // Navigate other links in the same window
+                }
+            }
+        }
+    </script>
+            
+
+    <header role="banner">
+        <h1>ARIA attribute value is missing</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Landmark Content</h2>
+            <p>This section demonstrates an ARIA attribute with a missing value.</p>
+            <!-- Missing ARIA attribute value -->
+            <button aria-live="polite">Click Me</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Footer content here.</p>
+    </footer>
+</body>
+</html>
